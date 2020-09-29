@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoursesApp1.Repository
 {
-    public interface IUser
+    public interface IUserRep
     {
         IEnumerable<User> GetAll();
         User GetById(int Id);
@@ -18,7 +18,7 @@ namespace CoursesApp1.Repository
         User DeleteObj(int Id);
 
         User VlidateUser(string username, string password);
-
+        User VlidateEmailForNewUser(string Email);
 
     }
 }

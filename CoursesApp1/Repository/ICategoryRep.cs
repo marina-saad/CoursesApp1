@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoursesApp1.Repository
 {
-    interface ICategoryRep
+    public interface ICategoryRep
     {
         IEnumerable<Category> GetAll();
         Category GetById(int Id);
@@ -16,5 +16,6 @@ namespace CoursesApp1.Repository
         Category EditObj(Category obj);
 
         Category DeleteObj(int Id);
+        IQueryable<string> GetCategoryNameByCourseId(int CategoryId);
     }
 }

@@ -8,6 +8,6 @@ namespace CoursesApp1.Entities
     public class Level
     {
         public int Id { get; set; }
-        public int LName { get; set; }
+        public string LName { get; set; }
     }
 }

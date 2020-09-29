@@ -15,12 +15,12 @@ namespace CoursesApp1.Entities
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public int EnrolledCourseId { get; set; }
-        public int CpmpletedCourse { get; set; }
-        public int Level { get; set; }
+        public int? EnrolledCourseId { get; set; }
+        public int? CompletedCourse { get; set; }
+        //public int Level { get; set; }
 
-        [ForeignKey("EnrolledCourseId")]
-        public Course CoursetoBeEnrolledIn { get; set; }
+        /*[ForeignKey("EnrolledCourseId")]
+        public Course CoursetoBeEnrolledIn { get; set; }*/
 
     }
 }

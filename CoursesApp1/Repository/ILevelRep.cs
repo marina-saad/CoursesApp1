@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoursesApp1.Repository
 {
-    interface ILevelRep
+    public interface ILevelRep
     {
         IEnumerable<Level> GetAll();
         Level GetById(int Id);
@@ -16,5 +16,6 @@ namespace CoursesApp1.Repository
         Level EditObj(Level obj);
 
         Level DeleteObj(int Id);
+        IQueryable<string> GetLevelNameByCourseId(int Id);
     }
 }

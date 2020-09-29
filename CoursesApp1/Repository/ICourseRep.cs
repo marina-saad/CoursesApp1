@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoursesApp1.Repository
 {
-    interface ICourseRep
+   public interface ICourseRep
     {
         IEnumerable<Course> GetAll();
         Course GetById(int Id);
@@ -16,5 +16,9 @@ namespace CoursesApp1.Repository
         Course EditObj(Course obj);
 
         Course DeleteObj(int Id);
+
+        IEnumerable<Course> getallbyCategoryId(int CategoryId);
+        IEnumerable<Course> getallbyLevelId(int LevelId);
+        IQueryable<int> GetSourceByCourseId(int CourseId);
     }
 }
