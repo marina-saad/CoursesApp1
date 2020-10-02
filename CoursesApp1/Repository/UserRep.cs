@@ -1,8 +1,10 @@
 ﻿using CoursesApp1.Container;
 using CoursesApp1.Entities;
+using Microsoft.AspNetCore.DataProtection.XmlEncryption;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
 namespace CoursesApp1.Repository
@@ -36,7 +38,8 @@ namespace CoursesApp1.Repository
             olddata.Name = obj.Name;
             olddata.Email = obj.Email;
             olddata.Password = obj.Password;
-            //olddata.Level = obj.Level;
+            olddata.PhoneNumber = obj.PhoneNumber;
+            olddata.LevelId = obj.LevelId;
             db.SaveChanges();
             return olddata;
         }
@@ -52,10 +55,15 @@ namespace CoursesApp1.Repository
             var data = db.Users.Find(Id);
             return data;
         }
-
-        public User VlidateUser(string username, string password)
+        public User GetByEmail(string Email)
         {
-            var data = db.Users.SingleOrDefault(a => a.Name == username && a.Password == password);
+            var data = db.Users.SingleOrDefault(a => a.Email == Email);
+            return data;
+        }
+
+        public User VlidateUser(string Email, string password)
+        {
+            var data = db.Users.SingleOrDefault(a => a.Email == Email && a.Password == password);
             return data;
         }
         public User VlidateEmailForNewUser(string Email)

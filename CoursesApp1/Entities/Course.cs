@@ -12,7 +12,7 @@ namespace CoursesApp1.Entities
        // public string CourseName { get; set; }
         public int CategoryId { get; set; }
         public int LevelId { get; set; }
-        public int PlaylistId { get; set; }
+        public string PlaylistId { get; set; }
         // public String Source { get; set; }
         //public int Rate { get; set; }
 

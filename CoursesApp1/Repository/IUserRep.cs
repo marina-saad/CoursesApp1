@@ -10,6 +10,7 @@ namespace CoursesApp1.Repository
     {
         IEnumerable<User> GetAll();
         User GetById(int Id);
+        User GetByEmail(string Email);
 
         User AddObj(User obj);
 

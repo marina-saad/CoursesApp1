@@ -28,10 +28,20 @@ namespace CoursesApp1.Controllers
             return Ok(data);
 
         }
-        [HttpGet("{UserName}/{Password}")]
-        public ActionResult Login(string UserName, String Password)
+        [HttpGet("{Email}")]
+        public ActionResult GetUserByEmail(string Email)
         {
-            var user = rep.VlidateUser(UserName, Password);
+            var user = rep.GetByEmail(Email);
+
+            return Ok(user);
+
+
+        }
+
+        [HttpGet("{Email}/{Password}")]
+        public ActionResult Login(string Email, String Password)
+        {
+            var user = rep.VlidateUser(Email, Password);
 
             if (user != null)
             {

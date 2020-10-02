@@ -19,6 +19,6 @@ namespace CoursesApp1.Repository
 
         IEnumerable<Course> getallbyCategoryId(int CategoryId);
         IEnumerable<Course> getallbyLevelId(int LevelId);
-        IQueryable<int> GetSourceByCourseId(int CourseId);
+        IQueryable<string> GetSourceByCourseId(int CourseId);
     }
 }

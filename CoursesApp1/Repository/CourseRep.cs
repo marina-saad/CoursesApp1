@@ -67,7 +67,7 @@ namespace CoursesApp1.Repository
             var data = db.Courses.Find(Id);
             return data;
         }
-        public IQueryable<int> GetSourceByCourseId(int CourseId)
+        public IQueryable<string> GetSourceByCourseId(int CourseId)
         {
             var data = db.Courses.Where(b=>b.Id == CourseId).Select(a=>a.PlaylistId);
             return data;
